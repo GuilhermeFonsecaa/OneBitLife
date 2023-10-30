@@ -1,0 +1,699 @@
+{
+	"info": {
+		"_postman_id": "f5dde59f-d58a-4687-982e-df7ae55c475f",
+		"name": "reactnative-marketplace",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12015810"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Juliana\",\r\n    \"email\": \"juliana@email.com\",\r\n    \"password\": \"123456\",\r\n    \"phone\": \"00000000000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{basePath}}/register",
+							"host": [
+								"{{basePath}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"juliana@email.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{basePath}}/login",
+							"host": [
+								"{{basePath}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "All products",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{basePath}}/products",
+							"host": [
+								"{{basePath}}"
+							],
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search products",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{basePath}}/products/search",
+							"host": [
+								"{{basePath}}"
+							],
+							"path": [
+								"products",
+								"search"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "fish",
+									"disabled": true
+								},
+								{
+									"key": "minPrice",
+									"value": "100",
+									"disabled": true
+								},
+								{
+									"key": "maxPrice",
+									"value": "150",
+									"disabled": true
+								},
+								{
+									"key": "category",
+									"value": "Health",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Anime Posters",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Meus posters de anime. São muito valiosos :D",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "50",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "Casa e Jardim",
+									"type": "text"
+								},
+								{
+									"key": "addressId",
+									"value": "63ec0757a07bb25a87b4242d",
+									"type": "text"
+								},
+								{
+									"key": "images",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "published",
+									"value": "false",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{basePath}}/products",
+							"host": [
+								"{{basePath}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get product image",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{basePath}}/uploads/products/:filename",
+							"host": [
+								"{{basePath}}"
+							],
+							"path": [
+								"uploads",
+								"products",
+								":filename"
+							],
+							"variable": [
+								{
+									"key": "filename",
+									"value": "1675908708201-431090035.jpeg"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"They are part of my personal collection. They are very rare and valuable. They are also on very good conditions.\",\r\n    \"addressId\": \"63ec077ca07bb25a87b42430\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{basePath}}/products/:_id",
+							"host": [
+								"{{basePath}}"
+							],
+							"path": [
+								"products",
+								":_id"
+							],
+							"variable": [
+								{
+									"key": "_id",
+									"value": "63ec0a7002fc4b3afdf3373c"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update product images",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_idsToDelete",
+									"value": "63ee95ca73d74bd628aed3f0",
+									"type": "text"
+								},
+								{
+									"key": "newImages",
+									"type": "file",
+									"src": "/C:/Users/isaac/OneDrive/Imagens/MidJourney/isaaclfp_Mary_Poppins_as_an_anime_character_c23fbb9e-cf2f-4ab9-bd4e-4c2e990118d3.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{basePath}}/products/:_id/images",
+							"host": [
+								"{{basePath}}"
+							],
+							"path": [
+								"products",
+								":_id",
+								"images"
+							],
+							"variable": [
+								{
+									"key": "_id",
+									"value": "63ec0a7002fc4b3afdf3373c"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{basePath}}/products/:_id",
+							"host": [
+								"{{basePath}}"
+							],
+							"path": [
+								"products",
+								":_id"
+							],
+							"variable": [
+								{
+									"key": "_id",
+									"value": "63ec098572d3b6dfd4b1281c"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "View user profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{basePath}}/users/:_id",
+							"host": [
+								"{{basePath}}"
+							],
+							"path": [
+								"users",
+								":_id"
+							],
+							"variable": [
+								{
+									"key": "_id",
+									"value": "642e06b081960e5d2e1747c2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "addresses",
+			"item": [
+				{
+					"name": "Get current user addresses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{basePath}}/addresses",
+							"host": [
+								"{{basePath}}"
+							],
+							"path": [
+								"addresses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add address",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"street\": \"Rua Missionário Salomão Ginsburg\",\r\n    \"number\": \"42\",\r\n    \"district\": \"Vila dos Coroados\",\r\n    \"city\": \"São Fidélis\",\r\n    \"state\": \"RJ\",\r\n    \"cep\": \"28.400-000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{basePath}}/addresses",
+							"host": [
+								"{{basePath}}"
+							],
+							"path": [
+								"addresses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete address",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{basePath}}/addresses/:_id",
+							"host": [
+								"{{basePath}}"
+							],
+							"path": [
+								"addresses",
+								":_id"
+							],
+							"variable": [
+								{
+									"key": "_id",
+									"value": "63e6e19d5c4a7db0bf392135"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ratings",
+			"item": [
+				{
+					"name": "Rate other user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"642e06b081960e5d2e1747c2\",\r\n    \"rating\": 8\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{basePath}}/ratings",
+							"host": [
+								"{{basePath}}"
+							],
+							"path": [
+								"ratings"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "categories",
+			"item": [
+				{
+					"name": "All categories",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{basePath}}/categories",
+							"host": [
+								"{{basePath}}"
+							],
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "favorites",
+			"item": [
+				{
+					"name": "Get current user favorite products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{basePath}}/favorites",
+							"host": [
+								"{{basePath}}"
+							],
+							"path": [
+								"favorites"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add favorite product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"642e06b081960e5d2e17493e\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{basePath}}/favorites",
+							"host": [
+								"{{basePath}}"
+							],
+							"path": [
+								"favorites"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove favorite product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"642348df30dffe03920e96e9\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{basePath}}/favorites/:_id",
+							"host": [
+								"{{basePath}}"
+							],
+							"path": [
+								"favorites",
+								":_id"
+							],
+							"variable": [
+								{
+									"key": "_id",
+									"value": "642e06b081960e5d2e17493e"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "conversations",
+			"item": [
+				{
+					"name": "Get current user's conversations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{basePath}}/conversations",
+							"host": [
+								"{{basePath}}"
+							],
+							"path": [
+								"conversations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create conversation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product\": \"642e06b081960e5d2e17493e\",\r\n    \"seller\": \"642e06b081960e5d2e1747c2\",\r\n    \"initialMessage\": \"Olá! Este produto está disponível?\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{basePath}}/conversations",
+							"host": [
+								"{{basePath}}"
+							],
+							"path": [
+								"conversations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send message",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\": \"Oi de novo!\",\r\n    \"receiver\": \"642e06b081960e5d2e1747c2\",\r\n    \"sender\": \"64223771c6926b339ea0b199\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{basePath}}/conversations/:_id/send",
+							"host": [
+								"{{basePath}}"
+							],
+							"path": [
+								"conversations",
+								":_id",
+								"send"
+							],
+							"variable": [
+								{
+									"key": "_id",
+									"value": "642ee723699c0aba4866236a"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{loginToken}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "basePath",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "loginToken",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
