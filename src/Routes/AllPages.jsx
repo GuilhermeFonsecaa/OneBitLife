@@ -3,7 +3,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import Start from "../Pages/Start"
 
-const Start = createNativeStackNavigator();
+const Stack = createNativeStackNavigator();
 
 export default function AllPages() {
     return (
