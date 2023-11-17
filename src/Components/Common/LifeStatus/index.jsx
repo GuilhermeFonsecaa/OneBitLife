@@ -40,21 +40,21 @@ const styles = StyleSheet.create({
     },
 
     education: {
-        width: 100,
+        width: 110,
         marginTop: 50,
         marginLeft: 5,
         position: "absolute",
     },
 
     money: {
-        width: 100,
+        width: 110,
         marginTop: 50,
         marginLeft: 95,
         position: "absolute",
     },
 
     robot: {
-        width: 190,
+        width: 200,
         marginTop: 30,
         marginLeft: 25,
     },
