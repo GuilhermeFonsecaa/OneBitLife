@@ -1,10 +1,11 @@
 import React from "react";
-import { ScrollView, View } from "react-native";
+import { ScrollView, View, Text, StyleSheet } from "react-native";
 import DefaultButton from "../../Components/Common/DefaultButton";
+import ExplanationCard from "../../Components/Explanation/ExplanationCard";
 
 export default function AppExplanation() {
 
-    const handleSetShowHome = () => {
+    function handleSetShowHome() {
         console.log("Cliquei")
     }
 
@@ -16,12 +17,14 @@ export default function AppExplanation() {
                         Antes, deixa {"\n"} eu te explicar...
                     </Text>
 
+                    <ExplanationCard/>
+
                     <Text style={styles.descriptionCta}>
                         Pronto(a) para subir de nível na vida?
                     </Text>
 
                     <Text style={styles.description}>
-                        Na próxima tela você poderá escolher ("\n") seus 4 hábitos de forma individual.
+                        Na próxima tela você poderá escolher {"\n"} seus 4 hábitos de forma individual.
                     </Text>
 
                     <DefaultButton
@@ -60,5 +63,5 @@ const styles = StyleSheet.create({
         color: "white",
         textAlign: "center",
         marginBottom: 30,
-    }
+    },
 })
