@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
     },
 
-    body: {
+    fun: {
         color: "#FE7F23",
         fontWeight: "bold",
     },

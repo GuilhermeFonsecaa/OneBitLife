@@ -2,11 +2,13 @@ import React from "react";
 import { ScrollView, View, Text, StyleSheet } from "react-native";
 import DefaultButton from "../../Components/Common/DefaultButton";
 import ExplanationCard from "../../Components/Explanation/ExplanationCard";
+import { useNavigation } from "@react-navigation/native";
 
 export default function AppExplanation() {
-
-    function handleSetShowHome() {
-        console.log("Cliquei")
+    const navigation = useNavigation()
+  
+    function handleNavHome() {
+        navigation.navigate("Home")
     }
 
     return (
@@ -17,7 +19,7 @@ export default function AppExplanation() {
                         Antes, deixa {"\n"} eu te explicar...
                     </Text>
 
-                    <ExplanationCard/>
+                    <ExplanationCard />
 
                     <Text style={styles.descriptionCta}>
                         Pronto(a) para subir de nível na vida?
@@ -29,7 +31,7 @@ export default function AppExplanation() {
 
                     <DefaultButton
                         buttonText={"Continuar"}
-                        handlePress={handleSetShowHome}
+                        handlePress={handleNavHome}
                         width={250}
                         height={50}
                     />
