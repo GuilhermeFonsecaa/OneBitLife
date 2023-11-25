@@ -2,6 +2,7 @@ import React from "react";
 import { ScrollView, View, Text, StyleSheet } from "react-native";
 import LifeStatus from "../../Components/Common/LifeStatus";
 import { useNavigation } from "@react-navigation/native";
+import StatusBar from "../../Components/Home/StatusBar";
 
 
 export default function Home() {
@@ -20,7 +21,9 @@ export default function Home() {
                         ❤️ 20 dias - ✔️ 80 checks
                     </Text>
                     <LifeStatus />
+                    <StatusBar />
                 </View>
+
 
                 <Text style={styles.explanationText} onPress={() => {
                     handleNavExplanation()
@@ -35,7 +38,7 @@ export default function Home() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "rgba(21,21,0,98)"
+        backgroundColor: 'rgba(21,21,21,0.98)',
     },
 
     dailyChecks: {
