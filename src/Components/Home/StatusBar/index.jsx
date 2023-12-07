@@ -42,7 +42,6 @@ const styles = StyleSheet.create({
         padding: 20,
         backgroundColor: "#151515",
         borderRadius: 10,
-        marginTop: 10,
         marginBottom: 10,
     },
 

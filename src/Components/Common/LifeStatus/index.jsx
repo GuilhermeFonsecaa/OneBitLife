@@ -35,28 +35,28 @@ export default function LifeStatus() {
 const styles = StyleSheet.create({
 
     container: {
-        width: 300,
+        width: 330,
         height: 300,
     },
 
     education: {
-        width: 110,
-        marginTop: 50,
-        marginLeft: 5,
+        width: 120,
+        marginTop: 40,
+        marginLeft: 3,
         position: "absolute",
     },
 
     money: {
-        width: 110,
-        marginTop: 50,
-        marginLeft: 95,
+        width: 120,
+        marginTop: 40,
+        marginLeft: 70,
         position: "absolute",
     },
 
     robot: {
         width: 200,
-        marginTop: 30,
-        marginLeft: 25,
+        marginTop: 20,
+        marginLeft: 21,
     },
 
 });

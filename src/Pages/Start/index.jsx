@@ -40,14 +40,14 @@ const styles = StyleSheet.create({
     logo: {
         width: 300,
         height: 60,
-        marginTop: 60,
-        marginBottom: 20,
+        marginTop: 70,
+        marginBottom: 25,
     },
 
     description: {
         color: "#FFFFFF",
-        fontSize: 20,
+        fontSize: 22,
         textAlign: "center",
-        marginVertical: 50
+        marginVertical: 60
     },
 })

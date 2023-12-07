@@ -52,13 +52,13 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         color: "white",
         textAlign: "center",
-        marginVertical: 40,
+        marginTop: 60,
     },
     descriptionCta: {
         color: "white",
         fontWeight: "bold",
         fontSize: 16,
-        marginTop: 20,
+        marginTop: 25,
         marginBottom: 10,
     },
     description: {

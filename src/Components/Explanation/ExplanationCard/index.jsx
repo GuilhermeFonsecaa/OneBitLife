@@ -46,6 +46,7 @@ export default function ExplanationCard() {
 const styles = StyleSheet.create({
     container: {
         backgroundColor: "#151515",
+        marginTop: 35,
         width: 350,
         borderRadius: 25,
         padding: 30

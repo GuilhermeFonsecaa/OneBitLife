@@ -17,6 +17,7 @@
     "lottie-react-native": "5.1.6",
     "react": "18.2.0",
     "react-native": "0.72.6",
+    "react-native-dropdown-select-list": "^2.0.5",
     "react-native-paper": "^5.0.0-rc.9",
     "supports-color": "^9.4.0"
   },
