@@ -1,27 +1,35 @@
-import React from "react";
-import { View, Text, StyleSheet } from "react-native"
-import { Switch, GestureHandlerRootView } from "react-native-gesture-handler";
-
+import React, { useState, useEffect } from "react";
+import { View, Text, StyleSheet, Switch } from "react-native";
 
 export default function Notification({ notificationToggle, setNotificationToggle }) {
+
+    const [toggled, setToggled] = useState(undefined);
+
+    //pega estado do notificationToggle
+    useEffect(() => {
+        setToggled(notificationToggle);
+    }, [notificationToggle]);
+
+    //alterar o estado do setToggled que pega o estado de NotificationToggle
     const toggleSwitch = () => {
+        setToggled((previousState) => !previousState);
         setNotificationToggle((previousState) => !previousState)
-    }
+    };
+
     return (
-        <View style={styles.container}>
-            <Text style={styles.title}>
-                Notificação
-            </Text>
-            <GestureHandlerRootView style={{ flex: 1 }}>
-                <Switch trackColor={{ false: "#FF0044", true: "#F2DBE56" }}
+        <>
+            <View style={styles.container}>
+                <Text style={styles.title}>Notificação</Text>
+                <Switch
                     thumbColor={"#FFFFFF"}
+                    trackColor={{ false: "#FF0044", true: "#2DBES6" }}
                     ios_backgroundColor="#3e3e3e"
                     onValueChange={toggleSwitch}
-                    value={notificationToggle}
+                    value={toggled}
                 />
-            </GestureHandlerRootView>
-        </View>
-    )
+            </View>
+        </>
+    );
 }
 
 const styles = StyleSheet.create({
@@ -33,11 +41,11 @@ const styles = StyleSheet.create({
     titleDisabled: {
         color: "#BBBB",
         fontSize: 20,
-        marginRight: 10
+        marginRight: 10,
     },
     title: {
         color: "white",
         fontSize: 20,
-        marginRight: 10
-    }
-})
+        marginRight: 10,
+    },
+});

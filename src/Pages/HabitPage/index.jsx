@@ -11,7 +11,9 @@ export default function HabitPage({ route }) {
     const { create, habit } = route.params;
     const [habitInput, setHabitInput] = useState()
     const [habitFrequency, setHabitFrequency] = useState()
-    const [notificationToggle, setNotificationToggle] = useState("null")
+    const [notificationToggle, setNotificationToggle] = useState(false)
+
+    console.log(notificationToggle)
 
     return (
         <View style={styles.container}>
@@ -30,9 +32,9 @@ export default function HabitPage({ route }) {
                         <SelectHabit habit={habit} habitInput={setHabitInput} />
                         <Text style={styles.inputText}>Frequência:</Text>
                         <SelectFrequency habit={habit} frequencyInput={setHabitFrequency} />
-                        {habitFrequency === "Mensal" ? null : (
+                        {habitFrequency === "Mensal" ? null :
                             <Notification notificationToogle={notificationToggle} setNotificationToggle={setNotificationToggle} />
-                        )}
+                        }
 
                     </View>
 
